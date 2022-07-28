@@ -54,6 +54,6 @@ Check [this link](https://github.com/vlang/ui#dependencies) for more info
 ```
 git clone https://github.com/nachoverdon/wasted_on_slippi
 cd wasted_on_slippi
-v install
+v install ui nachoverdon.wastedslp
 v -prod wasted_on_slippi
 ```
