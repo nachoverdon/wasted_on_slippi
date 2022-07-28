@@ -23,22 +23,22 @@ There are 2 options:
 Install the module
 
 ```
-v install wasted_on_slippi
+v install wastedslp
 ```
 
 Import it and use it
 ```v
-import wasted_on_slippi
+import wastedslp
 
 fn main() {
     directory := "C:/user/replays"
-    wasted := wasted_on_slippi.get_wasted(directory)
+    wasted := wastedslp.get_wasted(directory)
 
     slp_files := os.walk_ext(directory, slp_ext)
-    wasted_on_slippi.get_replays_duration(slp_files)
+    wastedslp.get_replays_duration(slp_files)
 
     slp_file := os.open("C:/user/replays/jv5.slp") or { panic(err) }
-    wasted_on_slippi.read_frames_from_slp_file(slp_file)
+    wastedslp.read_frames_from_slp_file(slp_file)
 }
 ```
 

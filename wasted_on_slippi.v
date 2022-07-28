@@ -1,4 +1,4 @@
-module wasted_on_slippi
+module wastedslp
 
 import encoding.binary { big_endian_u32 }
 import os { File }

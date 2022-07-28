@@ -1,5 +1,5 @@
 Module {
-	name: 'wasted_on_slippi'
+	name: 'wastedslp'
 	author: 'nachoverdon'
 	version: '1.0.0'
 	repo_url: 'https://github.com/nachoverdon/wasted_on_slippi'
