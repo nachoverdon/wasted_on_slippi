@@ -66,8 +66,7 @@ fn get_length_of_raw(file File) u32 {
 fn read_frames_from_slp_file(file_name string, file File) u32 {
 	mut length := get_length_of_raw(file)
 
-	// 17 = Offset until start of metadata
-	// 32 = Offset until start of lastFrame
+	// 70 = Offset until start of lastFrame
 	offset := u32(70)
 	// + 2 extra seconds because ready? go!
 	last_frame := big_endian_u32(file.read_bytes_at(4, length + offset)) + 120
