@@ -28,7 +28,7 @@ v install wastedslp
 
 Import it and use it
 ```v
-import wastedslp
+import nachoverdon.wastedslp.wastedslp
 
 fn main() {
     directory := "C:/user/replays"
