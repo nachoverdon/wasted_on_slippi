@@ -28,7 +28,7 @@ v install wastedslp
 
 Import it and use it
 ```v
-import nachoverdon.wastedslp.wastedslp
+import nachoverdon.wastedslp
 
 fn main() {
     directory := "C:/user/replays"
@@ -43,7 +43,7 @@ fn main() {
 ```
 
 
-## Build
+## Build executable
 
 1. Install [V](https://github.com/vlang/v)
 
@@ -55,5 +55,5 @@ Check [this link](https://github.com/vlang/ui#dependencies) for more info
 git clone https://github.com/nachoverdon/wasted_on_slippi
 cd wasted_on_slippi
 v install
-v -prod .
+v -prod wasted_on_slippi
 ```
