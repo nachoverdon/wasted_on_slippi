@@ -1,4 +1,4 @@
-module wastedslp
+module main
 
 import encoding.binary { big_endian_u32 }
 import os { File }
@@ -51,7 +51,7 @@ fn main() {
 	wasted_months := equivalent(wasted.weeks, weeks_in_month, wasted.months, "months")
 	wasted_years := equivalent(wasted.months, months_in_year, wasted.years, "years")
 
-	whole_text := "$wasted_text$wasted_days$wasted_weeks$wasted_months$wasted_years"
+	whole_text := wasted_text + wasted_days + wasted_weeks + wasted_months + wasted_years
 
 	// Don't show window if called with '--no-ui'
 	show_ui := !os.args.any(it == "--no-ui")

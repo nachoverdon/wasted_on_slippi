@@ -32,7 +32,7 @@ import wastedslp
 
 fn main() {
     directory := "C:/user/replays"
-    wasted := wastedslp.get_wasted(directory)
+    wasted := wastedslp.get_wasted(directory)  or { panic(err )}
 
     slp_files := os.walk_ext(directory, slp_ext)
     wastedslp.get_replays_duration(slp_files)
