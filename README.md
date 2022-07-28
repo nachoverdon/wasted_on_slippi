@@ -45,9 +45,12 @@ fn main() {
 
 ## Build
 
-It uses `ui` module, which requires a few dependencies on Linux.
+1. Install [V](https://github.com/vlang/v)
+
+1. It uses `ui` module, which requires a few dependencies on Linux.
 Check [this link](https://github.com/vlang/ui#dependencies) for more info
 
+1. Run
 ```
 git clone https://github.com/nachoverdon/wasted_on_slippi
 cd wasted_on_slippi
