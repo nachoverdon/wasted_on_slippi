@@ -1,0 +1,11 @@
+# Binaries for programs and plugins
+main
+wasted_on_slippi
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+vls.log
+
+test_replays
