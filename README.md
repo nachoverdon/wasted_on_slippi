@@ -50,10 +50,11 @@ fn main() {
 1. It uses `ui` module, which requires a few dependencies on Linux.
 Check [this link](https://github.com/vlang/ui#dependencies) for more info
 
-1. Run
+1. Run. Optionally add `-cflags '-mwindows'` so that it doesn't spawn a cmd
+window when exectued.
 ```
 git clone https://github.com/nachoverdon/wasted_on_slippi
 cd wasted_on_slippi
 v install ui nachoverdon.wastedslp
-v -prod wasted_on_slippi
+v -prod -cflags '-mwindows' wasted_on_slippi\wasted_on_slippi.v
 ```
