@@ -50,8 +50,8 @@ fn main() {
 1. It uses `ui` module, which requires a few dependencies on Linux.
 Check [this link](https://github.com/vlang/ui#dependencies) for more info
 
-1. Run. Optionally add `-cflags '-mwindows'` so that it doesn't spawn a cmd
-window when exectued.
+1. Run. (Optionally add `-cflags '-mwindows'` so that it doesn't spawn a cmd
+window when exectued if you don't plan to use it as a CLI)
 ```
 git clone https://github.com/nachoverdon/wasted_on_slippi
 cd wasted_on_slippi
