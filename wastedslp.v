@@ -4,42 +4,40 @@ import encoding.binary { big_endian_u32 }
 import os { File }
 import time { Duration }
 
-const (
-	slp_ext = "slp"
-	hours_in_day = 24
-	days_in_week = 7
-	weeks_in_month = 4
-	months_in_year = 12
-	raw_data_offset = 11
-	last_frame_offset = 70
-	extra_frames = 120
-)
+const slp_ext = 'slp'
+const hours_in_day = 24
+const days_in_week = 7
+const weeks_in_month = 4
+const months_in_year = 12
+const raw_data_offset = 11
+const last_frame_offset = 70
+const extra_frames = 120
 
 struct Wasted {
-	pub:
-		directory string
-		games u32
-		duration Duration
-		hours f64
-		days f64
-		weeks f64
-		months f64
-		years f64
+pub:
+	directory string
+	games     u32
+	duration  Duration
+	hours     f64
+	days      f64
+	weeks     f64
+	months    f64
+	years     f64
 }
 
 // 🍺🥴
 // Get the information about wasted time on Slippi
-pub fn get_wasted(directory string) ?Wasted {
+pub fn get_wasted(directory string) !Wasted {
 	// Check if exists and is a directory
 	if !os.exists(directory) || !os.is_dir(directory) {
-		return error("Invalid directory")
+		return error('Invalid directory')
 	}
 
 	// Get all .slp files in directory AND subdirectories
 	slp_files := os.walk_ext(directory, slp_ext)
 
 	if slp_files.len == 0 {
-		return error("No .slp files found")
+		return error('No .slp files found')
 	}
 
 	// Calculate total duration of the replays
@@ -50,15 +48,15 @@ pub fn get_wasted(directory string) ?Wasted {
 	months := weeks / weeks_in_month
 	years := months / months_in_year
 
-	return Wasted {
+	return Wasted{
 		directory: directory
-		games: u32(slp_files.len)
-		duration: duration
-		hours: hours
-		days: days
-		weeks: weeks
-		months: months
-		years: years
+		games:     u32(slp_files.len)
+		duration:  duration
+		hours:     hours
+		days:      days
+		weeks:     weeks
+		months:    months
+		years:     years
 	}
 }
 
@@ -75,7 +73,7 @@ pub fn get_replays_duration(slp_files []string) Duration {
 		total_frames += frames
 	}
 
-	return Duration(total_frames * time.second)
+	return Duration(total_frames / 60 * time.second)
 }
 
 // Read 4 bytes from the given file at the given position as a big endian u32
